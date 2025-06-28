@@ -1,7 +1,9 @@
+import about_image from "./about_image.jpg";
+
 const aboutUsPageContent = [
   {
-    section: "header",
-    text: "About Us - Glaze Craze Donuts",
+    section: "content-header",
+    header: "About Us - Glaze Craze Donuts",
   },
   {
     section: "about",
@@ -20,6 +22,12 @@ const aboutUsPageContent = [
     title: "Join Our Community",
     text: "This isn’t just a donut shop it’s a haven for dreamers, creatives, and flavor enthusiasts. Come join like-minded souls who geek out over handcrafted pastries and the perfect playlist. Whether you’re sketching in a notebook, debating the merits of matcha versus bourbon, or just vibing with the hum of Sweetville’s arts scene, Glaze Craze is where you connect, share ideas, and savor the good stuff. Bring your tote bag, your quirks, and your appetite for something extraordinary.",
   },
+  {
+    section: "about-image",
+    image: about_image,
+    image_alt_text: "Donut and coffee mug sitting on a wooden table",
+    image_size: 400,
+  }
 
 ]
 

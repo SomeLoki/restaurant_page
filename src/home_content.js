@@ -1,7 +1,15 @@
+import home_image from "./home_image.jpg"
+
 const homePageContent = [
   { 
-    section: "header",
-    text: "Glaze Craze Donuts",
+    section: "content-header",
+    header: "Glaze Craze Donuts",
+  },
+  {
+    section: "home-image",
+    image: home_image,
+    image_alt_text: "Man standing with back to you behind coffee counter",
+    image_size: 400,
   },
   {
     section: "description",
