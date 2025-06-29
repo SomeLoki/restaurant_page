@@ -9,57 +9,74 @@ function clearContent() {
   }
 }
 
-const createDomElement = function( textContent, parentElement, contentType, ...classes ) {
-  const newElement = document.createElement( contentType );
-  const parent = document.querySelector( parentElement );
-  if ( classes ) {
-    newElement.classList.add( ...classes );
-  }
-  newElement.textContent = textContent;
-  parent.appendChild(newElement);
+const createDomElement = function( content, elementType, classNames = [], attributes = {} ) {
+  const element = document.createElement( elementType );
+  element.classList.add(...classNames);
+  console.log( content );
+  if ( content ) element.textContent = content;
+  Object.assign( element, attributes );
+  return element;
 }
 
-function createImageElement( container, image, altText, imageSize ) {
-  const newImage = document.createElement("img");
-  const imageContainer = document.querySelector( `.${container} > .image`);
-  console.log(imageContainer);
-  newImage.src = image
-  newImage.alt = altText
-  newImage.height = imageSize;
-  newImage.width = imageSize;
-  imageContainer.appendChild( newImage );
+
+const contentMap = {
+  header: ( content ) => createDomElement( content.header, "h1", [ "header" ]) ,
+  title: ( content ) => createDomElement( content.title, "h2", [ "title" ] ),
+  text: ( content ) => createDomElement( content.text, "div", [ "text" ] ),
+  price: ( content ) => createDomElement ( content.price, "div", [ "price" ] ),
+  image: ( content ) => {
+      const imgContainer = createDomElement( null, "div", [ "image", "container" ] );
+      const img = createDomElement( null, "img", [ "img" ], {
+        alt: content.image_alt_text || "",
+        src: content.image || "",
+        width: content.image_size || 0,
+        height: content.image_size || 0
+      });
+
+      imgContainer.appendChild( img );
+      return imgContainer;
+  },
+  image_credit: ( content ) => {
+    const photoText = "Photo by "
+    const websiteText = " on "
+    const creditContainer = createDomElement( null, "div", [ "credit", "container" ] );
+    const photographer = createDomElement ( content.photographer, "a", [ "photographer", "link" ], {
+      href: content.photographer_link,
+    });
+    const website = createDomElement ( content.image_credit, "a", [ "website", "link" ], {
+      href: content.credit_link,
+    });
+    creditContainer.append( photoText, photographer, websiteText, website );
+    return creditContainer;
+  },
+};
+
+function createContentArray( content ) {
+  console.log("content:", content);
+  return Object.keys( contentMap )
+  .filter( key => content[key] !== undefined )
+  .map( key => contentMap[key]( content ));
 }
 
-function createPage( contentArray ) {
+
+
+function createPage( pageContentArray ) {
 
   const checkForContainer = ( section ) => ( document.querySelector( `.${section}` )) ? true : false;
 
-  for ( let content of contentArray ) {
-    if ( !checkForContainer(content.section )) {
-      createDomElement( "", "#content", "div", `${content.section}`, "container" );
-    };
+  for ( let content of pageContentArray ) {
+    let section;
+    if ( checkForContainer(content.section )) {
+      section = document.querySelector( `.${content.section}` );
 
-    if ( content.header ) {
-      createDomElement( content.header, `.${content.section}`, "h1", "header" );
-    };
-
-    if ( content.title ) {
-      createDomElement( content.title, `.${content.section}`, "h2", "title" );
-    };
-
-    if ( content.text ) {
-      createDomElement( content.text, `.${content.section}`, "div", "text" );
-    };
-
-    if ( content.price ) {
-      createDomElement( content.price, `.${content.section}`, "div", "text" );
-    };
-
-    if ( content.image ) {
-      //create an image container then create the image
-      createDomElement( "", `.${content.section}`, "div", "image", "container" );
-      createImageElement( content.section, content.image, content.image_alt_text, content.image_size );
+    } else {
+      section = createDomElement( null, "div", [ `${content.section}`, "container" ] );
+      const contentContainer = document.querySelector("#content");
+      contentContainer.appendChild( section );
     }
+    const contentArray = createContentArray( content );
+    console.log( contentArray );
+    section.append( ...contentArray );
   }
 
 }

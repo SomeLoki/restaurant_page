@@ -1,4 +1,4 @@
-import home_image from "./home_image.jpg"
+import home_image from "./images/home_image.jpg"
 
 const homePageContent = [
   { 
@@ -10,6 +10,10 @@ const homePageContent = [
     image: home_image,
     image_alt_text: "Man standing with back to you behind coffee counter",
     image_size: 400,
+    image_credit: "pexels.com",
+    credit_link: "https://www.pexels.com/photo/man-standing-beside-commercial-espresso-machine-2067431/",
+    photographer: "Marta Dzedyshko",
+    photographer_link: "https://www.pexels.com/@marta-dzedyshko-1042863/",
   },
   {
     section: "description",

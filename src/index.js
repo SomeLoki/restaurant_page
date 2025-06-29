@@ -3,6 +3,7 @@ import { homePageContent } from "./home_content";
 import { menuPageContent } from "./menu_content";
 import { aboutUsPageContent } from "./about_us_content";
 import { clearContent, createPage } from "./utilities";
+import "./style.css";
 
 const initializeButtons = (function() {
   const homeButton = document.querySelector(".home-btn");

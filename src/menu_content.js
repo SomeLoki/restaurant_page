@@ -1,9 +1,9 @@
-import lavender from "./lavender.jpg";
-import maple from "./maple.jpg";
-import pecan from "./pecan.jpg";
-import caramel from "./caramel.jpg";
-import matcha from "./matcha.jpg";
-import chai from "./chai.jpg";
+import lavender from "./images/lavender.jpg";
+import maple from "./images/maple.jpg";
+import pecan from "./images/pecan.jpg";
+import caramel from "./images/caramel.jpg";
+import matcha from "./images/matcha.jpg";
+import chai from "./images/chai.jpg";
 
 const menuPageContent = [
   {
@@ -19,6 +19,10 @@ const menuPageContent = [
     image: maple,
     image_alt_text: "5 sprinkled donuts sitting on a square plate",
     image_size: 300,
+    image_credit: "pexels.com",
+    credit_link: "https://www.pexels.com/photo/close-up-shot-of-chocolate-donuts-7440350/",
+    photographer: "Amanda Hemphill",
+    photographer_link: "https://www.pexels.com/@amanda-hemphill-2407528/",
   },
   {
     section: "donut2",
@@ -28,6 +32,10 @@ const menuPageContent = [
     image: lavender,
     image_alt_text: "6 chocolate donuts with purple flower on top",
     image_size: 300,
+    image_credit: "pexels.com",
+    credit_link: "https://www.pexels.com/photo/set-of-sweet-doughnuts-with-chocolate-glaze-decorated-with-viola-flower-7474271/",
+    photographer: "Valeria Boltneva",
+    photographer_link: "https://www.pexels.com/@valeriya/",
   },
   {
     section: "donut3",
@@ -37,6 +45,10 @@ const menuPageContent = [
     image: caramel,
     image_alt_text: "Gooey bar pastry with sprinkles on a white plate",
     image_size: 300,
+    image_credit: "pexels.com",
+    credit_link: "https://www.pexels.com/photo/delicious-pastry-on-display-5836533/",
+    photographer: "ROMAN ODINTSOV",
+    photographer_link: "https://www.pexels.com/@roman-odintsov/",
   },
   {
     section: "donut4",
@@ -46,6 +58,10 @@ const menuPageContent = [
     image: matcha,
     image_alt_text: "Green glazed donut sitting on a blue plate",
     image_size: 300,
+    image_credit: "pexels.com",
+    credit_link: "https://www.pexels.com/photo/donut-and-coffee-on-a-table-20500090/",
+    photographer: "Dee Dave",
+    photographer_link: "https://www.pexels.com/@dee-dave-60341237/",
   },
   {
     section: "donut5",
@@ -55,6 +71,11 @@ const menuPageContent = [
     image: pecan,
     image_alt_text: "Nutty and glazed donut sitting in white box",
     image_size: 300,
+    image_credit: "pexels.com",
+    credit_link: "https://www.pexels.com/photo/woman-holding-white-box-with-cake-15807274/",
+    photographer: "Connor McManus",
+    photographer_link: "https://www.pexels.com/@alteredsnaps/",
+
   },
   {
     section: "donut6",
@@ -64,6 +85,10 @@ const menuPageContent = [
     image: chai,
     image_alt_text: "White glazed donut held in paper in someones hand",
     image_size: 300,
+    image_credit: "pexels.com",
+    credit_link: "https://www.pexels.com/photo/person-holding-baked-bread-1204883/",
+    photographer: "Lisa from Pexels",
+    photographer_link: "https://www.pexels.com/@fotios-photos/",
   },
 ]
 
