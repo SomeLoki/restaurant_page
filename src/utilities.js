@@ -25,7 +25,7 @@ const contentMap = {
   text: ( content ) => createDomElement( content.text, "div", [ "text" ] ),
   price: ( content ) => createDomElement ( content.price, "div", [ "price" ] ),
   image: ( content ) => {
-      const imgContainer = createDomElement( null, "div", [ "image", "container" ] );
+      const imgContainer = createDomElement( null, "div", [ "image" ] );
       const img = createDomElement( null, "img", [ "img" ], {
         alt: content.image_alt_text || "",
         src: content.image || "",
@@ -34,12 +34,10 @@ const contentMap = {
       });
 
       imgContainer.appendChild( img );
-      return imgContainer;
-  },
-  image_credit: ( content ) => {
+
     const photoText = "Photo by "
     const websiteText = " on "
-    const creditContainer = createDomElement( null, "div", [ "credit", "container" ] );
+    const creditContainer = createDomElement( null, "div", [ "credit" ] );
     const photographer = createDomElement ( content.photographer, "a", [ "photographer", "link" ], {
       href: content.photographer_link,
     });
@@ -47,7 +45,8 @@ const contentMap = {
       href: content.credit_link,
     });
     creditContainer.append( photoText, photographer, websiteText, website );
-    return creditContainer;
+    imgContainer.appendChild( creditContainer );
+    return imgContainer;
   },
 };
 

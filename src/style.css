@@ -1,0 +1,172 @@
+* {
+ box-sizing: border-box;
+ line-height: 1;
+ padding: 0;
+ margin: 0;
+}
+
+body,
+nav,
+#content,
+.container,
+.credit {
+  display: grid;
+  justify-content: center;
+}
+
+#content,
+.container {
+  justify-content: center;
+  text-align: center;
+}
+
+body {
+  grid-template-columns: 1fr;
+  grid-template-rows: 150px 1fr;
+  height: 100dvh;
+  width: 100dvw;
+  background-image: url(./images/background.jpg);
+  background-size: cover;
+}
+
+nav {
+  justify-content: center;
+  align-items: end;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 150px;
+  gap: 0.5rem;
+}
+
+button {
+  font-size: 2rem;
+  font-weight: 500;
+  background-color: inherit;
+  border-bottom: none;
+  background-color: #b68a57d2;
+}
+
+#content {
+  padding: 1rem;
+  gap: 1rem;
+  justify-self: center;
+  grid-template-columns: 1fr;
+  width: max( 800px, 70dvw );
+  background-color:#1f3534f0;
+}
+
+.content-header {
+  height: 4rem;
+}
+
+
+h1,
+h2,
+.text,
+.price,
+.img {
+  align-self: center;
+  text-wrap-style: pretty;
+  text-wrap: wrap;
+}
+
+.text {
+  text-align: left;
+}
+
+.container {
+  width: max( 600px, 55dvw );
+  justify-self: center;
+  border: 0.2rem, solid black;
+  gap: 0.2rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: #b68a57d2;
+}
+
+.img {
+  justify-self: center;
+}
+
+.credit {
+  grid-template-columns: repeat(4, auto);
+  gap: 0.2rem;
+  justify-self: center;
+}
+
+.image,
+.credit,
+.home-image,
+.about-image {
+  border: none;
+}
+
+.donut1 >.image,
+.donut2 >.image,
+.donut3 >.image,
+.donut4 >.image,
+.donut5 >.image,
+.donut6 >.image {
+  width: 250px;
+}
+
+.credit,
+.link {
+  font-size: 0.7rem;
+}
+
+.donut1,
+.donut2,
+.donut3,
+.donut4,
+.donut5,
+.donut6 {
+  grid-template-areas: 
+  ". title title"
+  "image text text"
+  "image . price";
+}
+
+.donut1 >.title,
+.donut2 >.title,
+.donut3 >.title,
+.donut4 >.title,
+.donut5 >.title,
+.donut6 >.title { 
+  grid-area: title;
+}
+
+.donut1 >.text,
+.donut2 >.text,
+.donut3 >.text,
+.donut4 >.text,
+.donut5 >.text,
+.donut6 >.text {
+  grid-area: text;
+}
+
+.donut1 >.price,
+.donut2 >.price,
+.donut3 >.price,
+.donut4 >.price,
+.donut5 >.price,
+.donut6 >.price {
+  grid-area: price;
+}
+
+.donut1 >.image,
+.donut2 >.image,
+.donut3 >.image,
+.donut4 >.image,
+.donut5 >.image,
+.donut6 >.image {
+  grid-area: image;
+}
+
+a {
+  color: black;
+}
+
+.footer {
+  background-color: #b68a57;
+  width: max( 600px, 55dvw );
+}

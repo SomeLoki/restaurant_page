@@ -10,7 +10,7 @@ const homePageContent = [
     image: home_image,
     image_alt_text: "Man standing with back to you behind coffee counter",
     image_size: 400,
-    image_credit: "pexels.com",
+    image_credit: "pexels",
     credit_link: "https://www.pexels.com/photo/man-standing-beside-commercial-espresso-machine-2067431/",
     photographer: "Marta Dzedyshko",
     photographer_link: "https://www.pexels.com/@marta-dzedyshko-1042863/",
@@ -25,7 +25,7 @@ const homePageContent = [
     text: "Monday–Friday: 6:00 AM – 6:00 PM",
   },
   { 
-    section: "hours",
+    section: "hour",
     text: "Saturday–Sunday: 7:00 AM – 4:00 PM",
 
   },

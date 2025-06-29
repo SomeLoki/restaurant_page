@@ -27,7 +27,7 @@ const aboutUsPageContent = [
     image: about_image,
     image_alt_text: "Donut and coffee mug sitting on a wooden table",
     image_size: 400,
-    image_credit: "pexels.com",
+    image_credit: "pexels",
     credit_link: "https://www.pexels.com/photo/doughnut-on-white-ceramic-plate-beside-ceramic-mug-on-brown-wooden-table-3628508/",
     photographer: "Alfredo Alvarado",
     photographer_link: "https://www.pexels.com/@alfrd/",
